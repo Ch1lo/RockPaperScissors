@@ -23,7 +23,7 @@ function getComputerChoice(){
 function getPleyerChoice(){
     let playerChoice = prompt("Rock, Paper or Scissors?");
 
-    return playerChoice.toLocaleUpperCase()
+    return playerChoice.toUpperCase()
 }
 
 
@@ -37,6 +37,7 @@ function playGame(){
     
     
     function playRound(humanChoice, computerChoice){
+        
         if(humanChoice == "ROCK" && computerChoice == "PAPER"){
             ++computerScore;
     
@@ -58,12 +59,15 @@ function playGame(){
     
             console.log(`You Loose, ${computerChoice} beats ${humanChoice}`);
         }else if(humanChoice == "ROCK" && computerChoice == "SCISSORS"){
-            ++humanChoice
+            ++humanScore
     
             console.log(`You Win, ${humanChoice} beats ${computerChoice}`);
-        }else{
+        }else if(humanChoice == computerChoice){
             console.log(`It is a draw! ${humanChoice} is the same as ${computerChoice}`)
         }
+        
+
+
     
         
     }
